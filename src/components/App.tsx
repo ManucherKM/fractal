@@ -1,0 +1,26 @@
+import type { FC } from 'react'
+import { InputMaster, PublicInfo } from '.'
+import { Select } from '@/ui'
+
+export const App: FC = () => {
+	return (
+		<div>
+			{/* <PublicInfo
+				fullName='Алексей Иванов'
+				avatar='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALoAAAC6CAMAAAAu0KfDAAAAY1BMVEUAAAD///+CgoKHh4fW1tY8PDxQUFDf39/y8vLa2tpVVVXT09OXl5dKSkr4+PiPj49BQUF8fHygoKDn5+cdHR28vLy2trYODg4jIyNdXV1paWmnp6dwcHCtra0rKyt2dnY1NTUA07YpAAAGjUlEQVR4nNWd6XqqMBCGQ4sQBZFVVKx6/1dZcAORJEMSksn3+zzxPXbMMivxdCqhtFhXTZwd00tZ14TUdXlJj1ncVOuC0kTrhxFdC9EwqppscyBMHYJrU0UF1fWJetDDKudS9yo3Wb4PtXyoBnQ/PgUg7Dd+cIoj++jrXToL+42f7nyL6DTMaxnsl+o8VDF8efRwf1bhfuikYPey6FEcqIN32kqbvRx6dL7pAe90O8nBy6Cvt/q4H9quTaAn0Uk3eKdTNPuonYse/SwB3ulnrtnMQy/i21Lkrc3HxXLo+3Q58E7pfiF0qmk75CmYcUaB0el+efBOf2B4KLqv4eiE6Qz9uQLR/xa28qFWfzrRM6Vr1lzVmTZ0/aenSKDTFYBerUyTt0ZT6UDPzYN3ypXRk50dckJ2okuNAJ1mtsgJyQQ7PB893NgjJ2TDf0Fx0UMDR788Ow99bZm8Zedtkhz0tVVrEbOz0W1by0Mcm2Gi4yDnsbPQKQJreWjD2iMZ6InF/XysjHE2MdCtnaFT2s1Bt3RvYWn6PjOJXtlmHWvyHjmFvrZwy+VrNbW9T6Ebf1mItYWhI9pcek28+b7R/+TeoZfsB6TsIrV8/f3W/kL3Jd/+m4k/6aQkz7r0K34zRqey/hao30rah3Yef8AY/U9y4eXRydhkRuhUdl0D6GT0CSN0+XUNoI92yE90BZeoAXTy6cP+QC8UPIsm0NOP2MEHeiy/qhF0ErPQoxt29NvQgT1AT5QiXEbQyc/g2TFAj1TWNIROBl/7AF0tHmoI/TSFvlZa0hQ66W/uPbriLd0Uen8uvdHVLN0cem/tb3TVyL8x9PMYXWlPN4q+en3tL3SVg9Qs+vtIfaKHyk9pc+jb8ANdPYpuDv11gXygSz/rrKA/n3oP9FB5OZPopBiga/AxmkRvBugaUgBMotc9uq++mlH0x0Xmjq7Dm24UffdG15HsYhQ9faFHpYbVjKIf/Ce68iWg0waYYploia/FT3Qt6aLbyAcp0uK9Pz3Q9URI6xVQWnKxgvCOXukwdcM6VHd0ZOE6mPIO3Wa2jrwy2qLbTdeR1aZo0SOpChfbOkQtOrr4LkxVi97YhpBT45HkahtCTteEmMhKX0IBJdTJX2n7O6WksM0gq4IoOnjtKSSO7o3t7kgc3Rvb3ZFoeWfYUEycvHx1ysgR9O8ugUjgx89WuBQsY+ZIYN4ARr7eQOBNVlytBvOtpAT2X/wVfh7YbSku6/0FrXMhsNcdQvSSwF65CNFrl9FhQogOFUp0hw3GYXSHN0eHjyTYRQAhegq8fiFEPwIvvQjRf4BPDYToMfCBhxC9AT6rEaJXBPaRCNFDoAsJIXoBdNzhQz9QoLsUH3pAgU5qfOjXBBgawIfeQAMy+NAraBgMHfo9DFZAgo/o0O/BR1DIFx36PeQLCrSjQ8/B6Q3Y0J/pDZCkEgA6NKlEC/ozqQSSyiNGT2CZPL4vzlYCoD9TeSAJVGJ0jQKgvxKofPHOjgz9nbYGSBZEhv5OFgSEEZCh9yma4rAvMvQ+MVacjowLvfR6dOGBigt9mAQuPApxoQ9T74UFD6jQPwoehGUmqNA/ykyExT2Y0EfFPaLLACb0UUmVqJANEfpXIZvH/6EiQv8qHxQUbSJC/y7a5JfK4kGfKJXlX2TwoE8VKHMfS2jQJ8vCudaOBn26GJ/XAgELOqMFAm9vR4K+YjSe4B2pSNCZ7T68grlB4kDfspussC+QONA5rW3YDYVQoI/6cwHbOKFA57dxYpkMBvRxN39gyzIE6FdRyzJGozhxYqxGTXq0xI3iGO350l9Y8z0d+p368iDt+VxuiuhyK0qXG4DiK8sDt11FVz07o9mtyy2GXW7s7FFY/qMBHWe207Y9ZqDX/CbmWNhlWse73LC/Zbdu77JjEjxYqsyS5NLDKVp7t/q9HxVGgrg8iMXl8Teew0OHWlU38+B6Rj3ZmCWja8CW5/BYM8/sMLlU6zC51miMtda4QscTwwcnSjeVn6e99sGJHbwBT0EwY0DrvCGhC8NvlxoS6i08mnW15GhWz+GBuJ7LY4g7uTr8+a7oqtG3dwMPY9WB7nm+q4POO2kZL3+2MF6+Ey1ypaaEdVPMGJisFb3TepdKtbAq0x30rrIUuteZ/SmYhV8GJ2kD14veKqzybAPCLzdZXsnb91B60L3O8KOq4fIfgmtTRUrm/SFt6HcllBZh1cTZMb2Udfu0quvykh6zuKnCgtLZByZX/7PSbQSSxVtiAAAAAElFTkSuQmCC'
+			/>
+
+			<InputMaster
+				name='Номер телефона'
+				isShowTip={false}
+				tip='Lorem asdh kasjdhkjasd ja kahd kajashd kajshdkajshd. Lorem asdh kasjdhkjasd ja kahd kajashd kajshdkajshd. Lorem asdh kasjdhkjasd ja kahd kajashd kajshdkajshd'
+			/> */}
+
+			<Select
+				defaultValue='Не выбрано'
+				onChoose={console.log}
+				options={['мужской', 'женский']}
+			/>
+		</div>
+	)
+}

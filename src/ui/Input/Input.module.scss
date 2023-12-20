@@ -1,0 +1,13 @@
+@import '@/assets/styles/vars.scss';
+
+.root {
+	padding: 12px;
+	border-radius: 4px;
+	border: 1px solid $alpha16;
+	background: $alpha4;
+	outline: none;
+	color: $alpha48;
+	font-size: 14px;
+	font-weight: 400;
+	width: 100%;
+}

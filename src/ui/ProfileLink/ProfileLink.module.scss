@@ -1,0 +1,20 @@
+@import '@/assets/styles/vars.scss';
+
+.root {
+	display: flex;
+	gap: 4px;
+	align-items: center;
+
+	a {
+		color: $purple-100;
+		font-size: 12px;
+		font-weight: 400;
+		text-decoration: none;
+		transition: opacity 100ms;
+
+		&:hover {
+			transition: opacity 100ms;
+			opacity: 0.8;
+		}
+	}
+}

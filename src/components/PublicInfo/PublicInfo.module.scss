@@ -1,0 +1,16 @@
+.root {
+	display: flex;
+	gap: 24px;
+	align-items: center;
+
+	.wrapper__personalInfo {
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+
+		.wrapper__profileLinks {
+			display: flex;
+			gap: 16px;
+		}
+	}
+}
